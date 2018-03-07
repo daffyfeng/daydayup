@@ -60,7 +60,7 @@ p.then((val) => console.log('fulfilled:', val))
 p.then((val) => console.log('fulfilled:', val))
   .then(null, (err) => console.log("rejected:", err));
 </pre>
-
+catch还能捕获then中产生的异常
 所以，我还是用.catch处理我的异常好了
 
 > 待续
