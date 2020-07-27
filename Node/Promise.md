@@ -42,10 +42,10 @@ p2
   .catch(error => console.log(error))
 </pre>
 
-resole返回的是另一个Promise，p1，p2依次开始执行，但是p1要3s之后才会reject一个error出来，
+resole返回的是另一个Promise，**p1，p2依次开始执行，因为Promise新建后会立马执行**，但是p1要3s之后才会reject一个error出来，
 p2只需要1s就可以resolve一个p1。这个时候p1还在等待呢
 
-这个时候大佬告诉我，**如果p1的状态是pending，那么p2的回调函数就会等待p1的状态改变**
+**如果p1的状态是pending，那么p2的回调函数就会等待p1的状态改变**
 
 总共花了3s，p2执行完了之后，等了p1 2s，总的花了3s
 
